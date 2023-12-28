@@ -20,7 +20,7 @@ const WeatherApp = () => {
     if (element[0].value === "") {
       return;
     }
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&appid=${api_key}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&appid=${api_key}`;
     const response = await fetch(url);
     const data = await response.json();
     setWeatherData(data);
@@ -46,7 +46,7 @@ const WeatherApp = () => {
   return (
     <div className='container'>
       <h1>React Weather App</h1>
-      <div className='top-bar'>  
+      <div className='top-bar'>
         <input type='text' className='cityInput' placeholder='search' />
         <div className='search-icon' onClick={search}>
           <img src={searchIcon} alt="" />
@@ -79,7 +79,6 @@ const WeatherApp = () => {
       )}
     </div>
   )
-
 }
 
 export default WeatherApp;
